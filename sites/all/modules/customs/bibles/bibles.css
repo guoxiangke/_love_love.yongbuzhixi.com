@@ -1,0 +1,83 @@
+
+#audio_player{margin-top:5px;}
+#toggle_index a{font-size: 16px;font-weight: normal;}
+
+/*bible index*/
+
+	.b-warp,.b-top,.b-sidebar,.b-title{
+		border:1px solid #666;
+		padding:10px;
+		}
+	.b-top{
+    margin: 0 auto;
+    text-align: center;}
+	.b-v-item{width:13%;float:left;}
+	
+	#bibles_content{font-family:Microsoft YaHei;font-weight:bold;}
+	#bibles_content a:link, #bibles_content a:visited {
+	    color: #0099FF;
+	    text-decoration: none;
+	}
+	#bibles_content a:hover {
+		    color: #0099FF;
+		    text-decoration: underline;
+		}
+	#bibles_content .b-New a:link{color:#FF00FF;}
+	#bibles_content .b-New a:visited{color:#FF00FF;}
+	.bc-grey{color:gray;font-weight:normal;}
+	
+	/*page bible */
+	
+	#current-chapter a:link ,#current-chapter a:visited,#current-chapter a:hover{color:#000;}
+		#current-chapter {font-weight:bolder;}
+		.b-warp,.b-top,.b-sidebar,.b-title{
+			border:1px solid #666;
+			padding:10px;
+			}
+		.b-top{
+	    margin: 0 auto;
+	    text-align: center;}
+		
+		#bibles_content{font-family:Microsoft YaHei;font-weight:bold;}
+		.b-warp a:link, .b-warp a:visited {
+		    color: #0099FF;
+		    text-decoration: none;
+		}
+		#bibles_content a:hover {
+			    color: #0099FF;
+			    text-decoration: underline;
+			}
+		#bibles_content .b-New a:link{color:#FF00FF;}
+		.bc-grey{color:gray;font-weight:normal;}
+		.b-item {list-style-type:square;background:none; 
+		 list-style-position:inside;
+			letter-spacing:1px;
+		}
+		.b-item .source{font-size:12px;}
+		.bottom-nav {text-align:right;}
+		.next,.Home {margin-left:10px;}
+		.b-nav_to-chapter {width:100%;}
+		.c-index {font-size:14px;border: 5px solid #999999;padding: 10px;}
+		span.line-10 {width:37px;display:block;float:left;} 
+		
+		/*fixed*/
+		#bibles_content .b-item{width:100%;float:none;font-size: 14px;}
+.bibles-content{
+	    -moz-transition: all 1s ease 0s;
+	    padding-top: 30px;
+	     background-color: #FFFFFF;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 0 #CCCCCC;
+    width: 728px;
+    min-height: 600px;
+    overflow: hidden;
+    padding: 12px 258px 20px 14px;
+    position: relative;
+    z-index: 2;
+}
+.b-lists {
+	text-align: left;
+}
+.clear {
+	clear: both;
+}

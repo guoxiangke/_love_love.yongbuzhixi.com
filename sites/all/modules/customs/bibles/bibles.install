@@ -1,0 +1,54 @@
+<?php
+/**
+ * Implements hook_install().
+ */
+function bibles_install() {
+	//how to read sql file and execute.
+	//how to expect other css in specific page?
+	//http://stackoverflow.com/questions/19751354/how-to-import-sql-file-in-mysql-database-using-php
+	// Read in entire file
+	$filename = drupal_get_path('module', 'bibles').'/bible_index.sql';
+	$lines = file($filename);
+	// Loop through each line
+	$templine = '';
+	foreach ($lines as $line)
+	{
+	// Skip it if it's a comment
+	if (substr($line, 0, 2) == '--' || $line == '')
+	    continue;
+	// Add this line to the current segment
+	$templine .= $line;
+	// If it has a semicolon at the end, it's the end of the query
+	if (substr(trim($line), -1, 1) == ';')
+	{
+	    // Perform the query
+	    db_query($templine) or drupal_set_message('Error performing query \'<strong>' . $templine . '\': ' . mysql_error() . '<br /><br />', 'error', FALSE);
+	    // Reset temp variable to empty
+	    $templine = '';
+	}
+	}
+	drupal_set_message("Tables bible_index imported successfully", 'status', FALSE);
+		// Read in entire file
+	$filename = drupal_get_path('module', 'bibles').'/bible_zh_cuv.sql';
+	$lines = file($filename);
+	// Loop through each line
+	$templine = '';
+	foreach ($lines as $line)
+	{
+	// Skip it if it's a comment
+	if (substr($line, 0, 2) == '--' || $line == '')
+	    continue;
+	// Add this line to the current segment
+	$templine .= $line;
+	// If it has a semicolon at the end, it's the end of the query
+	if (substr(trim($line), -1, 1) == ';')
+	{
+	    // Perform the query
+	    db_query($templine) or drupal_set_message('Error performing query \'<strong>' . $templine . '\': ' . mysql_error() . '<br /><br />', 'error', FALSE);
+	    // Reset temp variable to empty
+	    $templine = '';
+	}
+	}
+	drupal_set_message("Tables bible_zh_cuv imported successfully", 'status', FALSE);
+
+}
