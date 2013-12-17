@@ -82,7 +82,7 @@ function mp_service_response() {
 
       switch ($keyword) {
         case '00':     
-          $contentStr = "通知：由于近期服务不稳定，很多主内佳人反应慢\n小永在加班加点提升服务，在此期间，可访问指令为：【52】今日广播\n【110】推荐给好友？\n【5010】灵命日粮文字版new\n【523】在天父怀中\n广播指令为纯数字，请勿带*号。号和中括号\n";//【1】玩法介绍\n【2】发布相片/心情\n【3】查看活跃用户\n【4】每日灵修广播\n
+          $contentStr = "通知：由于近期广播服务不稳定，很多主内佳人无法播放\n小永在加班加点提升服务，在此期间，可访问指令为\n【52】今日广播\n【110】推荐给好友？\n【5010】灵命日粮文字版new\n【523】在天父怀中\n广播指令为纯数字，请勿带*号。号和中括号\n";//【1】玩法介绍\n【2】发布相片/心情\n【3】查看活跃用户\n【4】每日灵修广播\n
             mp_service_update_user_info($wechatObj);
           break;        
         case '88':     
@@ -657,7 +657,7 @@ function mp_service_response() {
         case '523':
         case '５２３':
           $title = '在天父怀中';
-          $title = "$title-".date('ymd');
+          $title = "$title".date('ymd');
           $musicurl = 'http://audio1.liangyou.net/files/media/ly_daily/2013Daily_'.date('ymd').'.mp3';
           $desc = "love_yongbuzhixi公众号，每日更新";
           $hgmusicurl = $musicurl;
