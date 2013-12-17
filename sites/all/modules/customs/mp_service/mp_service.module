@@ -63,7 +63,9 @@ function mp_service_response() {
         }
       }
       $prefix_uri = 'http://audio2.liangyou.net/files/media/program_live/';
-      // $prefix_uri = 'http://liangyou.nissigz.com/media/';
+      $prefix_uri = 'http://liangyou.nissigz.com/media/';
+      $prefix_uri = 'http://liangyou2.nissigz.com:15200/';
+      // http://liangyou2.nissigz.com:15200/gv/gv131218.mp3
        $radio_list = array(
                 '500' => 'ws',
                 '501' => 'bv',
