@@ -1160,11 +1160,11 @@ function mp_service_update_user_info($wechatObj) {
   $options = array(
     'account'=>'love_yongbuzhixi',
     'password'=>'mjk5nj',
-    'datapath'=>'/mnt/www/html/yongbuzhixidev/docroot/sites/all/modules/mp_service/data/cookie_' ,
+    'datapath'=>'/home/wwwroot/love.dev.camplus.hk/public_html/sites/all/modules/mp_service/data/cookie_' ,
       'debug'=>FALSE,
       'logcallback'=>'logdebug' 
   );
-  drupal_chmod('/mnt/www/html/yongbuzhixidev/docroot/sites/all/modules/mp_service/data/cookie_yongbuzhixi');
+  drupal_chmod('/home/wwwroot/love.dev.camplus.hk/public_html/sites/all/modules/mp_service/data/cookie_yongbuzhixi');
   $wechat = new Wechatext($options);
   //$wechat
   $data = array();
@@ -1178,7 +1178,7 @@ function mp_service_update_user_info($wechatObj) {
         watchdog('get user', $fakeId.'  '.$data['contact_info']['user_name'].'  '.$data['contact_info']['nick_name'].'  '.$wechatObj->getRevContent(), array(), WATCHDOG_NOTICE, 'link');
         // if(isset($data['groups']))unset($data['groups']);
         // if(isset($data['base_resp']))unset($data['base_resp']);        
-        // watchdog('mp_service_user_data', '<pre>'.print_r($data,true), array(), WATCHDOG_NOTICE, 'link');
+        watchdog('mp_service_user_data', '<pre>'.print_r($data,true), array(), WATCHDOG_NOTICE, 'link');
 
         db_update('mp_service')
           ->fields(array(
