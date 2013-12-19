@@ -166,7 +166,7 @@ class Wechat
 	public function getRev()
 	{
 		$postStr = file_get_contents("php://input");
-		$this->log($postStr);watchdog('getRev', '<pre>:'.print_r($postStr,TRUE), array(), WATCHDOG_NOTICE, 'link');
+		$this->log($postStr);
 		if (!empty($postStr)) {
 			$this->_receive = (array)simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
 		}
