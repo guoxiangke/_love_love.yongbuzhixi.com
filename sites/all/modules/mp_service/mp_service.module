@@ -1164,7 +1164,7 @@ function mp_service_update_user_info($wechatObj) {
       'debug'=>FALSE,
       'logcallback'=>'logdebug' 
   );
-  drupal_chmod('/home/wwwroot/love.dev.camplus.hk/public_html/sites/all/modules/mp_service/data/cookie_yongbuzhixi');
+  // drupal_chmod('/home/wwwroot/love.dev.camplus.hk/public_html/sites/all/modules/mp_service/data/cookie_yongbuzhixi');
   $wechat = new Wechatext($options);
   //$wechat
   $data = array();
