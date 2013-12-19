@@ -9,6 +9,12 @@ function mp_service_menu() {
     'page callback' => 'mp_service_response',
     'access callback' => TRUE,
   );
+  $items['mp_service/%user/%'] = array(
+    'title' => 'valid&response',
+    'page callback' => 'wx_response',
+    'page arguments' => array(1,2),
+    'access callback' => TRUE,
+  );
   $items['admin/config/mp_service'] = array(
     'title' => 'mp_service settings',
     'page callback' => 'drupal_get_form',
@@ -17,6 +23,30 @@ function mp_service_menu() {
     'file' => 'mp_service.admin.inc',
   );
   return $items;
+}
+function wx_response($user, $appid = 'gh_a1f2569abd7f') {
+  module_load_include('php', 'mp_service', 'wechat.class');
+  $options = array(
+    'token'=> $appid, //填写你设定的key
+  );
+  $weObj = new Wechat($options);
+  $weObj->valid();
+  $type = $weObj->getRev()->getRevType();
+  switch($type) {
+      case Wechat::MSGTYPE_TEXT:
+        $weObj->text("hello, I'm wechat")->reply();
+        exit;
+        break;
+      case Wechat::MSGTYPE_EVENT:
+        $weObj->text("help info3")->reply();
+        break;
+      case Wechat::MSGTYPE_IMAGE:
+        $weObj->text("help info2")->reply();
+        break;
+      default:
+        $weObj->text("help info")->reply();
+  }
+
 }
 
 function mp_service_response() {
