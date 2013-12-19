@@ -26,6 +26,7 @@ function mp_service_menu() {
 }
 function wx_response($user, $appid = 'gh_a1f2569abd7f') {
   module_load_include('php', 'mp_service', 'wechat.class');
+  watchdog('appid', 'appid:'.$appid, array(), WATCHDOG_NOTICE, 'link');
   $options = array(
     'token'=> $appid, //填写你设定的key
   );
