@@ -7,25 +7,40 @@ function ybzx_rss_menu() {
 	$items['ybzx/rss/ztfhz'] = array(
 		'title' => 'ztfhz',
 		'page callback' => 'ztfhz_page',
+		'access callback' => true,
 	);
 	return $items;
 }
 function ztfhz_page(){
 
-		$html = file_get_html('http://liangyou.net/');
-
-		$node->title = trim($html->find('h1.entry-title', 0)->plaintext);
-		
+		$html = file_get_html('http://liangyou.net');		
 		// get title
 		$node = new stdClass();
 		$node->uid = '172'; //uid of love.
-		$node->type = 'ybread';
+		$node->type = 'ztfhz';
 		node_object_prepare($node);
 		//get title
-	  $node->title = trim($html->find('h1.entry-title', 0)->plaintext);
+		$titles = array();
+		$hrefs = array();
+		//<table border="0" cellspacing="3" cellpadding="0" width="100%">
+
+		for ($i=0; $i < 20; $i++) { 
+			$result = $html->find('.cmsf_channel_news_title', $i);
+			$title = trim($result->plaintext);
+			if(strstr($title, '在天父怀中：')) {
+				$titles[] = $title;
+				$hrefs[] = $result->find('a',0)->attr['href'];
+				if(count($titles)==3)break;
+			}
+
+		}
+		// $html->clear();
+	  dpm($titles);return 'Hello!';
 	  // get body
 	  $node->body[LANGUAGE_NONE][0]['value'] = trim($html->find('.entry-content', 0)->plaintext);
 	  $node->language = LANGUAGE_NONE;
+	  	  
+	  	  	
 	 	// Try to set your custom field
 	  $html = file_get_html('http://ya-mi.org/');
 
@@ -46,8 +61,8 @@ function ztfhz_page(){
 	  $node->body[LANGUAGE_NONE][0]['value'] = '<div class="ybread-img"><img src ="'.$pic_url.'"/></div>'.$node->body[LANGUAGE_NONE][0]['value'];
 	  // $node->body[LANGUAGE_NONE][0]['value'] = $node->body[LANGUAGE_NONE][0]['value'];
 	  $node->body[LANGUAGE_NONE][0]['format'] = 'full_html';
-	  
-	  node_save($node);
+	  dpm($node);
+	  // node_save($node);
 
 
 
