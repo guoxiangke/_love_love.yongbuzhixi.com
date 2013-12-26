@@ -61,7 +61,7 @@ function mp_service_response() {
     'password'=>'mjk5nj'
   );
   $wechatObj = new Wechat($options);
-  // $wechatObj->valid(); //注意, 应用验证通过后,可将此句注释掉, 但会降低网站安全性
+  $wechatObj->valid(); //注意, 应用验证通过后,可将此句注释掉, 但会降低网站安全性
   $type = $wechatObj->getRev()->getRevType();
   switch($type) {
     case Wechat::MSGTYPE_TEXT:
@@ -181,6 +181,13 @@ function mp_service_response() {
           $title = 'FM 77.7-love_yongbuzhixi';
           $musicurl = 'http://fm77.u.qiniudn.com/fm11.mp3';
           $desc = "云上的爱";
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
+        case '77':
+          $title = 'FM 77.7-love_yongbuzhixi';
+          $musicurl = 'http://fm77.u.qiniudn.com/77/xiangniannideshengdanjie.mp3';
+          $desc = "想你的圣诞节";
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
@@ -670,7 +677,54 @@ function mp_service_response() {
           // $hgmusicurl = $musicurl;
           // $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           // break;
+        case '1224':
+          $title = '耶稣全貌';
+          $desc = '序言-love_yongbuzhixi公众号，每日更新';
+          $musicurl = 'http://s3.amazonaws.com/ysqm/ch-00.mp3';
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
+        case '122501':
+          $title = '耶稣全貌-第一章 道成肉身';
+          $desc = 'love_yongbuzhixi公众号，每日更新';
+          $musicurl = 'http://s3.amazonaws.com/ysqm/ch-01.mp3';
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
+        case '122502':
+          $title = '耶稣全貌-第二章 圣婴降生';
+          $desc = 'love_yongbuzhixi公众号，每日更新';
+          $musicurl = 'http://s3.amazonaws.com/ysqm/ch-02.mp3';
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
+        case '122503':
+          $title = '耶稣全貌-第三章 预备道路';
+          $desc = 'love_yongbuzhixi公众号，每日更新';
+          $musicurl = 'http://s3.amazonaws.com/ysqm/ch-03.mp3';
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
+        case '122504':
+          $title = '耶稣全貌--第四章 传道之始';
+          $desc = 'love_yongbuzhixi公众号，每日更新';
+          $musicurl = 'http://s3.amazonaws.com/ysqm/ch-04.mp3';
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
+
         case 'wa':
+        case '1225':
+              $img = array(
+                  'Title'=> '良友串流广播【试听】',
+                  'Description'=>'点击查看全文收听！回复【11+您的建议反馈内容】，回复1225给love_yongbuzhixi获取本消息！永不止息，需要有你！',
+                  'PicUrl'=>'http://farm2.staticflickr.com/1275/4700591844_7010757842_b.jpg',
+                  'Url'=>'http://stream.liangyou.net/channel/65837e3587'
+                );
+                $news[] = $img; 
+            $wechatObj->news($news)->reply();
+             break;
+        case '5230':
           // $title = '天路导向';
           // $title = "$title-".date('ymd');
           // $week_day = date('N', time());
@@ -685,11 +739,11 @@ function mp_service_response() {
           // $hgmusicurl = $musicurl;
           // $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           $html = file_get_html('http://liangyou.net');   
-            // get title
-            $node = new stdClass();
-            $node->uid = '172'; //uid of love.
-            $node->type = 'ztfhz';
-            node_object_prepare($node);
+            // // get title
+            // $node = new stdClass();
+            // $node->uid = '1'; //uid of love.
+            // $node->type = 'ztfhz';
+            // node_object_prepare($node);
             //get title
             $titles = array();
             $hrefs = array();
@@ -698,14 +752,20 @@ function mp_service_response() {
             for ($i=0; $i < 20; $i++) { 
               $result = $html->find('.cmsf_channel_news_title', $i);
               $title = trim($result->plaintext);
+              $PicUrl[] = 'http://farm8.staticflickr.com/7380/11437510973_1c915bca2d.jpg';
+              //http://liangyou.net/files/media/images/daily_sharing/2013Daily_banner.png
+              $PicUrl[] = 'http://farm3.staticflickr.com/2618/3726417739_02ed7b13d7_z.jpg';
+              $PicUrl[] = 'http://farm8.staticflickr.com/7446/11438985886_0e19bb5331_m.jpg';
+              
+              $PicUrl[] = 'http://liangyou.net/files/media/images/daily_sharing/2013Daily_banner.png';
               if(strstr($title, '在天父怀中：')) {
                 $titles[] = $title;
                 $href = $result->find('a',0)->attr['href'];
                  $img = array(
                   'Title'=> $title,
                   'Description'=>'在天父怀中,永不止息,圣诞巨献！',
-                  'PicUrl'=>'http://liangyou.net/files/media/images/daily_sharing/2013Daily_banner.png',
-                  'Url'=>$href
+                  'PicUrl'=>$PicUrl[count($titles)-1],
+                  'Url'=>'http://stream.liangyou.net/channel/65837e3587'
                 );
                 $news[] = $img; 
 
@@ -1091,7 +1151,7 @@ function mp_service_response() {
 
             }else {
               $wechatObj->setFuncFlag(TRUE);
-              $contentStr = "通知:由于近期广播服务不稳定,小永在加班加点提升服务,请代祷！此期间,可访问指令为\n【52】今日广播\n【110】推荐给好友？\n【5010】灵命日粮文字版new\n【523】在天父怀中\n";
+              $contentStr = "通知:由于近期广播服务不稳定,小永在加班加点提升服务,请代祷！此期间,可访问指令为\n【52】今日广播\n【110】推荐给好友？\n【5010】灵命日粮文字版new\n【523】在天父怀中\n【11+您的圣诞祝福与感恩代祷或建议内容】";
               //如需高级服务，请微信添加 yongbuzhixi_love\n回复【00】进入主菜单\n回复【5】进入良友广播\n回复【11+问题】获得帮助\n回复【110】推荐给好友？\n回复【11+您的祝福与感恩或建议内容】呼唤小永归来吧！\n永不止息，需要有你！\n官网：http://love.yongbuzhixi.org \n
             }
           break;
@@ -1115,7 +1175,7 @@ function mp_service_response() {
             $contentStr = "欢迎回来[Smile]\n永不止息，需要有你!\n通过微信玩转永不止息？\n回复【00】进入主菜单\n回复【52】收听广播\n广播指令为纯数字，请勿带特殊括号\n除广播内容外，所有功能测试开发中～敬请期待！";
             mp_service_resubscribe($FromUserName);
           }else {
-            $contentStr = "欢迎关注[Smile]\n通过微信玩转永不止息？\n回复【00】进入主菜单\n回复【52】收听良友广播\n广播指令为纯数字，请勿带特殊符号\n除广播内容外，所有功能测试开发中～敬请期待！";
+            $contentStr = "欢迎关注[Smile]\n永不止息-主内婚恋网，是http://yongbuzhixi.com 旗下的微信公众帐号。该网站是@bluesky_still透过对当前教会单身肢体需求的看见，业余时间开发的针对主内肢体婚恋社交网站，通过简洁的关系建立渠道，熟人的推荐，舆论监督与指导，为肢体提供一个便捷互相了解、信实互动的社交平台。\n回复【52】收听良友广播\n广播指令为纯数字，请勿带特殊符号\n";//通过微信玩转永不止息？\n回复【00】进入主菜单\n
             mp_service_add_user($FromUserName);
           }
           mp_service_text_reply($contentStr);
@@ -1209,7 +1269,7 @@ function mp_service_response() {
       // $wechatObj->text("已收到您发送的图片！")->reply();
       break;
     default:
-      $wechatObj->text("如需帮助，请回复【11+问题】\n测试开发中～敬请期待！\n以后再有什么问题，回复【11+您的祝福与感恩或建议内容】呼唤小永吧！")->reply();
+      $wechatObj->text("如需帮助，请回复【11+问题】\n通知:由于近期广播服务不稳定,小永在加班加点提升服务,请代祷！\n回复【11+您的圣诞祝福与感恩代祷或建议内容】")->reply();
   }
   return;
 
@@ -1225,11 +1285,11 @@ function mp_service_update_user_info($wechatObj) {
   $options = array(
     'account'=>'love_yongbuzhixi',
     'password'=>'mjk5nj',
-    'datapath'=>'/home/wwwroot/love.dev.camplus.hk/public_html/sites/all/modules/mp_service/data/cookie_' ,
+    'datapath'=>'data/cookie_',
       'debug'=>FALSE,
       'logcallback'=>'logdebug' 
   );
-  // drupal_chmod('/home/wwwroot/love.dev.camplus.hk/public_html/sites/all/modules/mp_service/data/cookie_yongbuzhixi');
+  // drupal_chmod('data/cookie_yongbuzhixi');
   $wechat = new Wechatext($options);
   //$wechat
   $data = array();
