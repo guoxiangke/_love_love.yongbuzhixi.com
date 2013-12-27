@@ -57,8 +57,8 @@ function mp_service_response() {
   );
   $options = array(
     'token'=>'ybzx',
-    'account'=>'xiangkeguo@gmail.com',
-    'password'=>'mjk5nj'
+    'account'=>'aizheng@ylnwt.net',
+    'password'=>'shangbuqi2013'
   );
   $wechatObj = new Wechat($options);
   $wechatObj->valid(); //注意, 应用验证通过后,可将此句注释掉, 但会降低网站安全性
