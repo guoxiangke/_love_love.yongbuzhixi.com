@@ -712,6 +712,20 @@ function mp_service_response() {
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
+        case '122505':
+          $title = '耶稣全貌--第五章 知难而进';
+          $desc = 'love_yongbuzhixi公众号，每日更新';
+          $musicurl = 'http://s3.amazonaws.com/ysqm/ch-05.mp3';
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
+        case '122506':
+          $title = '耶稣全貌--第六章 登山宝训';
+          $desc = 'love_yongbuzhixi公众号，每日更新';
+          $musicurl = 'http://s3.amazonaws.com/ysqm/ch-06.mp3';
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
 
         case 'wa':
         case '1225':
