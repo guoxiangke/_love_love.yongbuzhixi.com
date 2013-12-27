@@ -61,7 +61,7 @@ function mp_service_response() {
     'password'=>'mjk5nj'
   );
   $wechatObj = new Wechat($options);
-  // $wechatObj->valid(); //注意, 应用验证通过后,可将此句注释掉, 但会降低网站安全性
+  $wechatObj->valid(); //注意, 应用验证通过后,可将此句注释掉, 但会降低网站安全性
   $type = $wechatObj->getRev()->getRevType();
   switch($type) {
     case Wechat::MSGTYPE_TEXT:
@@ -856,7 +856,7 @@ function mp_service_response() {
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
         case 'ee':
-          $html = file_get_html('http://blog.sina.cn/dpool/blog/articlelist_1356034001.html');
+          $html = file_get_html('http://blog.sina.cn/dpool/blog/articlelist_1570453241.html');
           $items = $html->find('#pl-blog-list .cont-txt-tit-ls li');
           foreach ($items->children as $key => $html) {
             $link = $html->find('.pic-tit-lk', 0);
@@ -1003,7 +1003,7 @@ function mp_service_response() {
                   $comment->cid = 0; // leave it as is
                   $comment->pid = 0; // parent comment id, 0 if none 
                   $comment->uid = 0; // user's id, who left the comment
-                  // watchdog('mp_service', '<pre>'.print_r($wechat_user_info,true), array(), WATCHDOG_NOTICE, 'link');
+                  watchdog('mp_service', '<pre>'.print_r($wechat_user_info,true), array(), WATCHDOG_NOTICE, 'link');
                   $comment->mail = $wechat_user_info['contact_info']['fake_id'].'@yongbuzhixi.com'; // user's email wechat_user_info
                   //a:10:{s:7:"fake_id";i:2553430760;s:9:"nick_name";s:6:"麦青";s:9:"user_name";s:10:"maiqing-py";s:9:"signature";s:31:"在心中修篱种菊..........";s:4:"city";s:6:"昆明";s:8:"province";s:6:"云南";s:7:"country";s:6:"中国";s:6:"gender";i:2;s:11:"remark_name";s:0:"";s:8:"group_id";i:108;}
                   $comment->name = $wechat_user_info['contact_info']['nick_name']; // If user is authenticated you can omit this field, it will be auto-populated, if the user is anonymous and you want to name him somehow, input his name here
