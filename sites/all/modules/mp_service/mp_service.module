@@ -677,6 +677,12 @@ function mp_service_response() {
           // $hgmusicurl = $musicurl;
           // $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           // break;
+          $title = 'i关怀心磁场';
+          $desc = '医学教授 有神吗？';
+          $musicurl = 'http://117.135.136.157:8080/~audio1/stream-server/mp3_file/folder_6/im131230.mp3';
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
         case '1224':
           $title = '耶稣全貌';
           $desc = '序言-love_yongbuzhixi公众号，每日更新';
