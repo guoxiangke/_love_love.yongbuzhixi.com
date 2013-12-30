@@ -678,7 +678,7 @@ function mp_service_response() {
           // $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           // break;
           $title = 'i关怀心磁场';
-          $desc = '医学教授唐安大擂台:有神吗？';
+          $desc = '医学教授唐安大擂台:有神吗？love_yongbuzhixi公众号，每日更新';
           $musicurl = 'http://117.135.136.157:8080/~audio1/stream-server/mp3_file/folder_6/im131230.mp3';
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
