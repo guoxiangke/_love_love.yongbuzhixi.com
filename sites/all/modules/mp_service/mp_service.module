@@ -900,71 +900,75 @@ function mp_service_response() {
                   }
                 }
               } 
-            } elseif (substr($keyword, 0,2) == '20') {
-            //201+您想说的话
-              $menukey = substr($keyword, 0, 3);//201-204
-              $keyword = substr($keyword, 3);
-              if(strlen($keyword) < 10 ) {
-                $contentStr = "内容不能少于10字！";
-              }else{
-                $uid = mp_service_get_uid_by_name($FromUserName);
-                if(!$uid) {
-                  $contentStr = "您还没有与网站帐号绑定！\n回复【9】查看绑定帮助";
-                }else{
-                  $node = new stdClass();
-                  $node->title = $keyword.'【来自微信】';
-                  $node->type = 'photo';
-                  node_object_prepare($node); // Sets some defaults. Invokes hook_prepare() and hook_node_prepare().
-                  $node->language = LANGUAGE_NONE; // Or e.g. 'en' if locale is enabled
-                  $node->uid = $uid;
-                  $node->status = 1; //(1 or 0): published or not
-                  $node->promote = 0; //(1 or 0): promoted to front page
-                  $node->comment = 0; // 0 = comments disabled, 1 = read only, 2 = read/write
-                  $node->path['pathauto'] = false;
-                  // $node->body[$node->language][0]['value']   = $postObj->Content . print_r($postObj,true);
-                  // $node->body[$node->language][0]['summary'] = text_summary($postObj->Content);
-                  // $node->body[$node->language][0]['format']  = 'filtered_html';
-                  // 【201】无主情话(随便说点情话)-38
-                  // 【202】时光隧道(分享我的过去)-39
-                  // 【203】独居生活(记录现在的生活)-40
-                  // 【204】想对你说(写给喜欢的人)-41
+            }
 
-                  $node->field_status_topic[$node->language][0]['tid'] = $menukey-163;
-                  ////////begin @see love_layout_node_presave($node)
-                   // $pattern = '/#([^\\#|.]+)#|＃([^\\＃|.]+)＃/';
-                   // preg_match_all($pattern, $node->title, $matches, PREG_SET_ORDER);
-                   // $node->field_status_tags[LANGUAGE_NONE] = array();
-                   // foreach ($matches as $key => $value) {
+            //  elseif (substr($keyword, 0,2) == '20') {
+            // //201+您想说的话
+            //   $menukey = substr($keyword, 0, 3);//201-204
+            //   $keyword = substr($keyword, 3);
+            //   if(strlen($keyword) < 10 ) {
+            //     $contentStr = "内容不能少于10字！";
+            //   }else{
+            //     $uid = mp_service_get_uid_by_name($FromUserName);
+            //     if(!$uid) {
+            //       $contentStr = "您还没有与网站帐号绑定！\n回复【9】查看绑定帮助";
+            //     }else{
+            //       $node = new stdClass();
+            //       $node->title = $keyword.'【来自微信】';
+            //       $node->type = 'photo';
+            //       node_object_prepare($node); // Sets some defaults. Invokes hook_prepare() and hook_node_prepare().
+            //       $node->language = LANGUAGE_NONE; // Or e.g. 'en' if locale is enabled
+            //       $node->uid = $uid;
+            //       $node->status = 1; //(1 or 0): published or not
+            //       $node->promote = 0; //(1 or 0): promoted to front page
+            //       $node->comment = 0; // 0 = comments disabled, 1 = read only, 2 = read/write
+            //       $node->path['pathauto'] = false;
+            //       // $node->body[$node->language][0]['value']   = $postObj->Content . print_r($postObj,true);
+            //       // $node->body[$node->language][0]['summary'] = text_summary($postObj->Content);
+            //       // $node->body[$node->language][0]['format']  = 'filtered_html';
+            //       // 【201】无主情话(随便说点情话)-38
+            //       // 【202】时光隧道(分享我的过去)-39
+            //       // 【203】独居生活(记录现在的生活)-40
+            //       // 【204】想对你说(写给喜欢的人)-41
 
-                   //    $term_name = $value[1];
-                   //    $term = taxonomy_get_term_by_name($term_name);
-                   //    //new one
-                   //    if(!count($term)){
-                   //     $term = new stdClass();
-                   //     $term->vid = 1;
-                   //     $term->name = $term_name;
-                   //     taxonomy_term_save($term);
-                   //     //$term = taxonomy_get_term_by_name($term_name);
-                   //     foreach ($term as $value) {
-                   //        //dpm($value,$key);
-                   //        $node->field_status_tags[LANGUAGE_NONE][$term->tid]['tid'] = $term->tid;
-                   //      }
-                   //    }else{
-                   //      foreach ($term as $tid => $value) {
-                   //        // dpm($value,$tid);
-                   //        $node->field_status_tags[LANGUAGE_NONE][$tid]['tid'] = $tid;
-                   //      }
-                   //    }
-                   // }
-                  ///////////end
-                  if($node = node_submit($node)) { // Prepare node for saving
-                      node_save($node);//\n".$tip."
-                      $contentStr = "恭喜您【".$keyword."】\n已经成功发布，查看已发布内容：http://www.yongbuzhixi.com";
-                  }
-                }
-              }
-              # code...
-            } elseif (substr($keyword, 0,2) == '11') {
+            //       $node->field_status_topic[$node->language][0]['tid'] = $menukey-163;
+            //       ////////begin @see love_layout_node_presave($node)
+            //        // $pattern = '/#([^\\#|.]+)#|＃([^\\＃|.]+)＃/';
+            //        // preg_match_all($pattern, $node->title, $matches, PREG_SET_ORDER);
+            //        // $node->field_status_tags[LANGUAGE_NONE] = array();
+            //        // foreach ($matches as $key => $value) {
+
+            //        //    $term_name = $value[1];
+            //        //    $term = taxonomy_get_term_by_name($term_name);
+            //        //    //new one
+            //        //    if(!count($term)){
+            //        //     $term = new stdClass();
+            //        //     $term->vid = 1;
+            //        //     $term->name = $term_name;
+            //        //     taxonomy_term_save($term);
+            //        //     //$term = taxonomy_get_term_by_name($term_name);
+            //        //     foreach ($term as $value) {
+            //        //        //dpm($value,$key);
+            //        //        $node->field_status_tags[LANGUAGE_NONE][$term->tid]['tid'] = $term->tid;
+            //        //      }
+            //        //    }else{
+            //        //      foreach ($term as $tid => $value) {
+            //        //        // dpm($value,$tid);
+            //        //        $node->field_status_tags[LANGUAGE_NONE][$tid]['tid'] = $tid;
+            //        //      }
+            //        //    }
+            //        // }
+            //       ///////////end
+            //       if($node = node_submit($node)) { // Prepare node for saving
+            //           node_save($node);//\n".$tip."
+            //           $contentStr = "恭喜您【".$keyword."】\n已经成功发布，查看已发布内容：http://www.yongbuzhixi.com";
+            //       }
+            //     }
+            //   }
+            //   # code...
+            // } 
+
+            elseif (substr($keyword, 0,2) == '11') {
             //201+您想说的话
               if(strlen($keyword) < 10 ) {
                 $contentStr = "内容不能少于3字！";
