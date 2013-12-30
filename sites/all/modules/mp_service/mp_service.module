@@ -1205,6 +1205,7 @@ $notice = "通知:由于近期广播服务不稳定,小永在加班加点提升�
           break;
       }
       $wechatObj->text($contentStr)->reply();
+      $wechatObj->text($notice)->reply();
       exit;
       break;
     case Wechat::MSGTYPE_EVENT:
