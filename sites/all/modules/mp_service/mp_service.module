@@ -847,6 +847,7 @@ $notice = "通知:由于近期广播服务不稳定,小永在加班加点提升�
           $desc = 'love_yongbuzhixi公众号';
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+      $wechatObj->text($notice)->reply();
           break;
         case 'ee':
           $html = file_get_html('http://blog.sina.cn/dpool/blog/articlelist_1570453241.html');
