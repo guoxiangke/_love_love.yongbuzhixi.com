@@ -758,14 +758,14 @@ function mp_service_response() {
         case '122509':
           $title = '耶稣全貌--第九章  五饼二鱼';
           $desc = 'love_yongbuzhixi公众号，每日更新';
-          $musicurl = 'http://s3.amazonaws.com/ysqm/ch-07.mp3';
+          $musicurl = 'http://s3.amazonaws.com/ysqm/ch-09.mp3';
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
         case '122510':
           $title = '耶稣全貌--第十章  荣耀显现';
           $desc = 'love_yongbuzhixi公众号，每日更新';
-          $musicurl = 'http://s3.amazonaws.com/ysqm/ch-08.mp3';
+          $musicurl = 'http://s3.amazonaws.com/ysqm/ch-10.mp3';
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
