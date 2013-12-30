@@ -86,7 +86,7 @@ function mp_service_response() {
         }
       }
       //以20开头的，发布内如的，如果没有绑定，直接回绝！
-      if(substr($keyword, 0,2) == '20') {
+      if(substr($keyword, 0,2) == '20' && substr($keyword, 0,6) != '201314'  ) {
         if(!$uid) {
           $contentStr = "未绑定！不可发送20开头的指令！\n回复【9】查看绑定帮助\n回复【5】良友今日广播";
           $wechatObj->text($contentStr)->reply();
