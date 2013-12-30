@@ -664,6 +664,7 @@ function mp_service_response() {
           // $hgmusicurl = $musicurl;
           // $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           // break;
+        case '523':
         case 'eg':
           // $title = '英语世界';
           // $title = "$title-".date('ymd');
@@ -683,7 +684,6 @@ function mp_service_response() {
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
-        case '523':
         case '５２３':
           $title = '在天父怀中';
           $title = "$title".date('ymd');
