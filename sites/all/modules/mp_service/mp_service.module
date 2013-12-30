@@ -110,10 +110,10 @@ function mp_service_response() {
                 '509' => 'gv',
                 '523' => 'gv',
                 );
-$notice = "通知:由于近期广播服务不稳定,小永在加班加点提升服务,请代祷！此期间,可访问指令为\n【52】今日广播\n【523】在天父怀中\n回复【201314+您的爱情宣言】去微信大屏幕看看吧！";//回复【11+您的祝福与感恩或建议内容】
+$notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,请代祷！\n回复【201314+您的爱情宣言】去微信大屏幕看看吧！";//回复【11+您的祝福与感恩或建议内容】
       switch ($keyword) {
         case '00':     
-          $contentStr = $notice;//广播指令为纯数字，请勿带*号。号和中括号\n【1】玩法介绍\n【2】发布相片/心情\n【3】查看活跃用户\n【4】每日灵修广播\n
+          $contentStr = $notice."\n此期间,可访问指令为\n【52】今日广播\n【523】在天父怀中";//广播指令为纯数字，请勿带*号。号和中括号\n【1】玩法介绍\n【2】发布相片/心情\n【3】查看活跃用户\n【4】每日灵修广播\n
             mp_service_update_user_info($wechatObj);
           break;        
         case '88':     
@@ -847,7 +847,6 @@ $notice = "通知:由于近期广播服务不稳定,小永在加班加点提升�
           $desc = 'love_yongbuzhixi公众号';
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
-      $wechatObj->text($notice)->reply();
           break;
         case 'ee':
           $html = file_get_html('http://blog.sina.cn/dpool/blog/articlelist_1570453241.html');
@@ -1206,7 +1205,6 @@ $notice = "通知:由于近期广播服务不稳定,小永在加班加点提升�
           break;
       }
       $wechatObj->text($contentStr)->reply();
-      $wechatObj->text($notice)->reply();
       exit;
       break;
     case Wechat::MSGTYPE_EVENT:
@@ -1350,7 +1348,7 @@ function mp_service_update_user_info($wechatObj) {
         $fakeId = $Msg['fakeid'];
         $data = $wechat->getInfo($fakeId);
 
-        watchdog('get user', $fakeId.'  '.$data['contact_info']['user_name'].'  '.$data['contact_info']['nick_name'].'  '.$wechatObj->getRevContent(), array(), WATCHDOG_NOTICE, 'link');
+        watchdog('get user:'.$FromUserName, $fakeId.'  '.$data['contact_info']['user_name'].'  '.$data['contact_info']['nick_name'].'  '.$wechatObj->getRevContent(), array(), WATCHDOG_NOTICE, 'link');
         // if(isset($data['groups']))unset($data['groups']);
         // if(isset($data['base_resp']))unset($data['base_resp']);        
         watchdog('mp_service_user_data', '<pre>'.print_r($data,true), array(), WATCHDOG_NOTICE, 'link');
