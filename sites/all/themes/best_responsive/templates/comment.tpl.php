@@ -100,6 +100,6 @@
       <?php endif; ?>
     </div> <!-- /.content -->
 
-    <?php //print render($content['links']); ?>
+    <?php print render($content['links']); ?>
   </div> <!-- /.comment-text -->
 </div>
