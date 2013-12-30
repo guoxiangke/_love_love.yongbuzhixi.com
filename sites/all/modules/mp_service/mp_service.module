@@ -678,8 +678,17 @@ function mp_service_response() {
           // $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           // break;
           $title = 'i关怀心磁场';
-          $desc = '医学教授 有神吗？';
+          $desc = '医学教授唐安大擂台:有神吗？';
           $musicurl = 'http://117.135.136.157:8080/~audio1/stream-server/mp3_file/folder_6/im131230.mp3';
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
+        case '523':
+        case '５２３':
+          $title = '在天父怀中';
+          $title = "$title".date('ymd');
+          $musicurl = 'http://audio1.liangyou.net/files/media/ly_daily/2013Daily_'.date('ymd').'.mp3';
+          $desc = "love_yongbuzhixi公众号，每日更新";
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
@@ -744,70 +753,6 @@ function mp_service_response() {
                 $news[] = $img; 
             $wechatObj->news($news)->reply();
              break;
-        case '5230':
-          // $title = '天路导向';
-          // $title = "$title-".date('ymd');
-          // $week_day = date('N', time());
-          // $add = 1;
-          // if(date('d')/2) $add = 2;
-          // $tus = date('d')+(5-$week_day) + $add;
-          // $string = date('ym',time()).$tus;
-          // // $musicurl = 'http://liangyou.nissigz.com/media/eg/eg'.$string.'.mp3';
-          // $musicurl = 'http://audio2.liangyou.net/files/media/program_live/wa/wa'.$string.'.mp3';
-          // $desc = date("n月");
-          // $desc .= $tus."日";
-          // $hgmusicurl = $musicurl;
-          // $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
-          $html = file_get_html('http://liangyou.net');   
-            // // get title
-            // $node = new stdClass();
-            // $node->uid = '1'; //uid of love.
-            // $node->type = 'ztfhz';
-            // node_object_prepare($node);
-            //get title
-            $titles = array();
-            $hrefs = array();
-            //<table border="0" cellspacing="3" cellpadding="0" width="100%">
-
-            for ($i=0; $i < 20; $i++) { 
-              $result = $html->find('.cmsf_channel_news_title', $i);
-              $title = trim($result->plaintext);
-              $PicUrl[] = 'http://farm8.staticflickr.com/7380/11437510973_1c915bca2d.jpg';
-              //http://liangyou.net/files/media/images/daily_sharing/2013Daily_banner.png
-              $PicUrl[] = 'http://farm3.staticflickr.com/2618/3726417739_02ed7b13d7_z.jpg';
-              $PicUrl[] = 'http://farm8.staticflickr.com/7446/11438985886_0e19bb5331_m.jpg';
-              
-              $PicUrl[] = 'http://liangyou.net/files/media/images/daily_sharing/2013Daily_banner.png';
-              if(strstr($title, '在天父怀中：')) {
-                $titles[] = $title;
-                $href = $result->find('a',0)->attr['href'];
-                 $img = array(
-                  'Title'=> $title,
-                  'Description'=>'在天父怀中,永不止息,圣诞巨献！',
-                  'PicUrl'=>$PicUrl[count($titles)-1],
-                  'Url'=>'http://stream.liangyou.net/channel/65837e3587'
-                );
-                $news[] = $img; 
-
-                if(count($titles)==3)break;
-              }
-
-            }
-
-          //单图文 标题15字 摘要60字
-          //多图文 1标题16字 2标题15字
-          $wechatObj->news($news)->reply();
-
-          break;
-        case '523':
-        case '５２３':
-          $title = '在天父怀中';
-          $title = "$title".date('ymd');
-          $musicurl = 'http://audio1.liangyou.net/files/media/ly_daily/2013Daily_'.date('ymd').'.mp3';
-          $desc = "love_yongbuzhixi公众号，每日更新";
-          $hgmusicurl = $musicurl;
-          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
-          break;
         case '520':
         case '５２０':
         // http://media.haomuren.org/dev/joy/joyhrt0716.mp3
