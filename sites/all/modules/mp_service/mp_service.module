@@ -111,7 +111,10 @@ function mp_service_response() {
                 '509' => 'gv',
                 '523' => 'gv',
                 );
-$notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,请代祷！\n回复【201314+您的爱情宣言】去微信大屏幕看看吧！";//回复【11+您的祝福与感恩或建议内容】
+$notice = "----新年快乐----
+2014，永不止息，需要有你！
+全新的你，全新的广播
+回复【31】【32】\n回复【201314+您的新年愿望】去微信大屏幕看看吧！";//回复【11+您的祝福与感恩或建议内容】
 
 
       $radio_list_simple = array(
@@ -266,9 +269,9 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
       
       foreach ($radio_list_simple as $key => $programs) {
         $menu['31'] = "----福音节目----
-【ir】i-radio爱广播
+【i r】i-radio爱广播
 【eg】英语世界
-【gt】恩典与真理
+【g t】恩典与真理
 【wa】天路导向
 【bg】普世佳音
 【yu】绝妙当家
@@ -284,12 +287,18 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
 【ib】无限飞行号
 【rt】今夜心未眠
 【em】听听90后
-【yr】Yi-radio爱广播";
+【y r】Yi-radio爱广播
+----新年快乐----
+--永不止息，需要有你-
+--2014，全新的你【gv】--";
         $menu['32'] = '----训练节目----
 【bv】灵命日粮
 【ee】拥抱每一天
-【bf】幸福满家园
-【ws】长夜的牵引';
+【b f】幸福满家园
+【ws】长夜的牵引
+----新年快乐----
+--永不止息，需要有你-
+2014  【gv】全新的你';
         // foreach ($programs as $key2 => $value2) {
         //   $menu["$key"] .= "\n【".$key2."】". $value2;
         // }
@@ -952,8 +961,20 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
-
-        case 'wa':
+        case '122511':
+          $title = '耶稣全貌--第11章';
+          $desc = 'love_yongbuzhixi公众号，每日更新';
+          $musicurl = 'http://s3.amazonaws.com/ysqm/ch-11.mp3';
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
+        case '122512':
+          $title = '耶稣全貌--第12章';
+          $desc = 'love_yongbuzhixi公众号，每日更新';
+          $musicurl = 'http://s3.amazonaws.com/ysqm/ch-12.mp3';
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
         case '1225':
               $img = array(
                   'Title'=> '良友串流广播【试听】',
@@ -1173,7 +1194,7 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
                 $mp_service_records = mp_service_get_record($FromUserName);
                 
                 if($mp_service_records['last_cmd'] == '1111') {
-                  $contentStr = "您今天已经参与过了，请明天再来吧！\n回复【52】听听广播吧！";
+                  $contentStr = "您今天已经参与过了，请明天再来吧！\n回复【31】听听广播吧！";
                 }else{
                   mp_service_update_cmd('1111',$FromUserName);
                   ///////
@@ -1209,7 +1230,7 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
                   ///////////end
                   if($comment = comment_submit($comment)) { // Prepare node for saving                      
                       comment_save($comment);
-                      $contentStr = "恭喜，发布成功,您是第".$comment->cid."位提意见者！\n地址：http://www.yongbuzhixi.com/ \n永不止息，需要有你！\nhttp://www.yongbuzhixi.com";
+                      $contentStr = "恭喜，发布成功,您是第".$comment->cid."位提意见者！\n地址：http://www.yongbuzhixi.com/ \n永不止息，需要有你！\nhttp://www.yongbuzhixi.com\n回复【31】听听广播吧！";
                   }
                 }
               }
@@ -1221,10 +1242,10 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
               }else{
                 $mp_service_records = mp_service_get_record($FromUserName);
                 
-                if($mp_service_records['last_cmd'] == '201314') {
-                  $contentStr = "您今天已经参与过了！\n回复【52】听听广播吧！";
+                if($mp_service_records['last_cmd'] == date('ymd')) {
+                  $contentStr = "您今天已经参与过了，请明天再来吧！\n回复【31】听听广播吧！";
                 }else{
-                  mp_service_update_cmd('201314',$FromUserName);
+                  mp_service_update_cmd(date('ymd'),$FromUserName);
                   ///////
                   $comment = new stdClass();
 
@@ -1403,10 +1424,10 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
 
         if($Event['event'] == 'subscribe') {
           if(mp_service_get_record($FromUserName)) {
-            $contentStr = "欢迎回来[Smile]\n永不止息，需要有你!\n通过微信玩转永不止息？\n回复【00】进入主菜单\n回复【52】收听广播\n广播指令为纯数字，请勿带特殊括号\n除广播内容外，所有功能测试开发中～敬请期待！";
+            $contentStr = "欢迎回来[Smile]\n永不止息，需要有你!\n通过微信玩转永不止息？\n回复【00】进入主菜单\n回复【31】收听广播\n广播指令为纯数字，请勿带特殊括号\n除广播内容外，所有功能测试开发中～敬请期待！";
             mp_service_resubscribe($FromUserName);
           }else {
-            $contentStr = "欢迎关注[Smile]\n永不止息-主内婚恋网，是http://yongbuzhixi.com 旗下的微信公众帐号。该网站是@bluesky_still透过对当前教会单身肢体需求的看见，业余时间开发的针对主内肢体婚恋社交网站，通过简洁的关系建立渠道，熟人的推荐，舆论监督与指导，为肢体提供一个便捷互相了解、信实互动的社交平台。\n回复【52】收听良友广播\n广播指令为纯数字，请勿带特殊符号\n";//通过微信玩转永不止息？\n回复【00】进入主菜单\n
+            $contentStr = "欢迎关注[Smile]\n永不止息-主内婚恋网，是http://yongbuzhixi.com 旗下的微信公众帐号。该网站是@bluesky_still透过对当前教会单身肢体需求的看见，业余时间开发的针对主内肢体婚恋社交网站，通过简洁的关系建立渠道，熟人的推荐，舆论监督与指导，为肢体提供一个便捷互相了解、信实互动的社交平台。\n回复【31】收听良友广播\n广播指令为纯数字，请勿带特殊符号\n";//通过微信玩转永不止息？\n回复【00】进入主菜单\n
             mp_service_add_user($FromUserName);
           }
           mp_service_text_reply($contentStr);
@@ -1493,7 +1514,7 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
         }
 
       }else {
-        $contentStr = "您还没有与网站帐号绑定！暂不能发送图片！\n回复【9】查看绑定帮助";
+        $contentStr = "您还没有与网站帐号绑定！暂不能发送图片！\n回复【31】听听广播吧！";//回复【9】查看绑定帮助
         $wechatObj->text($contentStr)->reply();
         exit;
       }
