@@ -115,7 +115,7 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
 
       $radio_list_simple = array(
         // 福音节目-适合所有人士
-        '30' => array(
+        '31' => array(
           'ir' => 'i-radio爱广播',//0
           'eg' => '英语世界',//2
           'gt' => '恩典与真理', //0
@@ -137,7 +137,7 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
           'em' => '听听90后',//6,7
           'yr' => 'Yi-radio爱广播',//0
           ),
-        '31' => array(
+        '32' => array(
           // 栽培节目-适合基督徒
 
           'bv' => '灵命日粮',
@@ -260,10 +260,10 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
       
       
       foreach ($radio_list_simple as $key => $programs) {
-        $menu['30'] = '--福音节目-适合所有人士--';
-        $menu['31'] = '--训练节目-适合事奉人员--';
+        $menu['31'] = '--福音节目--';
+        $menu['32'] = '--训练节目--';
         foreach ($programs as $key2 => $value2) {
-          $menu[$key] .= "\n【$key2】". $value2;
+          $menu["$key"] .= "\n【".$key2."】". $value2;
         }
         if($keyword == $key) {
           $wechatObj->text($menu[$key])->reply();
