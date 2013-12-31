@@ -270,7 +270,8 @@ $notice = "
       
       
       foreach ($radio_list_simple as $key => $programs) {
-        $menu['31'] = "----福音节目----
+        $menu['31'] = "
+        ----福音节目----
 【i r】i-radio爱广播
 【eg】英语世界
 【g t】恩典与真理
@@ -290,7 +291,8 @@ $notice = "
 【r t】今夜心未眠
 【em】听听90后
 【y r】Yi-radio爱广播".$notice ;
-        $menu['32'] = '----训练节目----
+        $menu['32'] = '
+        ----训练节目----
 【bv】灵命日粮
 【ee】拥抱每一天
 【b f】幸福满家园
