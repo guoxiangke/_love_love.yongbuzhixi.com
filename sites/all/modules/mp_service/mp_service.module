@@ -264,8 +264,8 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
       
       
       foreach ($radio_list_simple as $key => $programs) {
-        $menu['31'] = '--福音节目--';
-        $menu['32'] = '--训练节目--';
+        $menu['31'] = '----福音节目----';
+        $menu['32'] = '----训练节目----';
         foreach ($programs as $key2 => $value2) {
           $menu["$key"] .= "\n【".$key2."】". $value2;
         }
