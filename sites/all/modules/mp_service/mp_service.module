@@ -275,7 +275,7 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
         }
       }
       
-      if(in_array($keyword, array_keys($value2)) { // || in_array($keyword, $value2)
+      if(in_array($keyword, array_keys($radios_list)) { // || in_array($keyword, $value2)
         if($radios_list[$keyword]['day'] == 0) {//1-7
           watchdog('keyword1', $keyword, array(), WATCHDOG_NOTICE, 'link');
           $title = $radios_list[$keyword]['name'];//'英语世界';
