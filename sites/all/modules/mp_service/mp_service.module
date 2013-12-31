@@ -294,8 +294,8 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
                       【ee】拥抱每一天\n
                       【bf】幸福满家园\n
                       【ws】长夜的牵引";       
-        if($keyword == $key) {
-          $wechatObj->text($menu["$key"])->reply();
+        if(in_array($keyword, array_keys($menu))) {
+          $wechatObj->text($menu["$keyword"])->reply();
           return;
         }
 
