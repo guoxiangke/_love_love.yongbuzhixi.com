@@ -288,7 +288,7 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
           $hgmusicurl = $musicurl;
           watchdog('musicurl2', $musicurl, array(), WATCHDOG_NOTICE, 'link');
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
-          break;
+          return;
         }
         if($radios_list[$keyword]['day'] == 5) {//1-5
           $desc = '1-5';
@@ -309,8 +309,7 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
           $desc .= $tus."日";
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
-          break;
-
+          return;
         }
 
       }
