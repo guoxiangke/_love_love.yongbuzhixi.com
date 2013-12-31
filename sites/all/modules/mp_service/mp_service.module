@@ -266,7 +266,7 @@ $notice = "通知:近期广播服务不稳定,小永在加班加点提升服务,
           $menu["$key"] .= "\n【".$key2."】". $value2;
         }
         if($keyword == $key) {
-          $wechatObj->text($menu[$key])->reply();
+          $wechatObj->text($menu["$key"])->reply();
           return;
         }
       }
