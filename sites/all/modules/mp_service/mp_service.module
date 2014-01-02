@@ -876,7 +876,9 @@ $notice = "\n----新年快乐----
         case '５２３':
           $title = '在天父怀中';
           $title = "$title".date('ymd');
-          $musicurl = 'http://audio1.liangyou.net/files/media/ly_daily/2013Daily_'.date('ymd').'.mp3';
+          $y = data('y')-1;
+          $str = $y.date('md');
+          $musicurl = 'http://audio1.liangyou.net/files/media/ly_daily/2013Daily_'.$str.'.mp3';
           $desc = "love_yongbuzhixi公众号，每日更新";
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
