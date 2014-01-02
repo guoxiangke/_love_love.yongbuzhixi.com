@@ -269,7 +269,7 @@ $notice = "\n----新年快乐----
       
       
       foreach ($radio_list_simple as $key => $programs) {
-        $menu['31'] = '
+        $menu['31'] = "
         ----福音节目----
 【i r】i-radio爱广播
 【eg】英语世界
@@ -289,15 +289,13 @@ $notice = "\n----新年快乐----
 【i b】无限飞行号
 【r t】今夜心未眠
 【em】听听90后
-【y r】Yi-radio爱广播
-<a href="http://stream.liangyou.net/channel/65837e3587">良友串流广播【试听】</a>'.$notice ;
+【y r】Yi-radio爱广播".$notice ;
         $menu['32'] = '
         ----训练节目----
 【bv】灵命日粮
 【ee】拥抱每一天
 【b f】幸福满家园
-【ws】长夜的牵引
-<a href="http://stream.liangyou.net/channel/65837e3587">良友串流广播【试听】</a>'.$notice ;
+【ws】长夜的牵引'.$notice ;
         // foreach ($programs as $key2 => $value2) {
         //   $menu["$key"] .= "\n【".$key2."】". $value2;
         // }
