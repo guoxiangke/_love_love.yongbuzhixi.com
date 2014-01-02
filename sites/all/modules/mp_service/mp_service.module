@@ -1387,6 +1387,8 @@ $notice = "\n----新年快乐----
                 $string = date('ymd',time()-$before*24*60*60);
                 $musicurl = 'http://audio2.liangyou.net/files/media/program_live/'.$which.'/'.$which.''.$string.'.mp3';
                 if($radio_cmd == '523') {
+                  $y = date('y')-1;
+                  $string = $y.date('md',time()-$before*24*60*60);
                   $musicurl = 'http://audio1.liangyou.net/files/media/ly_daily/2013Daily_'.$string.'.mp3';
                 }
                 $desc = date('m.d',time()-$before*24*60*60);
