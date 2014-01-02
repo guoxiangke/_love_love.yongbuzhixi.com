@@ -1,0 +1,32 @@
+<?php
+/**
+ * http://www.uyan.cc/help/html/uyan-diy
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function uyan_menu() {
+	$items = array();
+	$items['admin/config/content/uyan_comments'] = array(
+		'title' => 'Uyan comment settings',
+    'description' => 'Uyan comments on site.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('uyan_comments_settings'),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'uyan.admin.inc',
+	);
+	return $items;
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function uyan_node_view($node, $view_mode, $langcode) {
+	$uyan_comments_node_types = variable_get('uyan_comments_node_types', array());
+	if($view_mode == 'full' && in_array($node->type, $uyan_comments_node_types)) {
+		unset($node->content['comments']);
+		drupal_add_js("jQuery(document).ready(function ($) { $('#node-".$node->nid."').append('<div id=\"uyan_frame\"></div>'); });",array('type' => 'inline', 'scope' => 'footer', 'weight' => 400));
+		drupal_add_js('http://v2.uyan.cc/code/uyan.js?uid='.variable_get('uyan_account_id', '91212'),array('type' => 'external', 'scope' => 'footer', 'weight' => 500));
+	}
+}
