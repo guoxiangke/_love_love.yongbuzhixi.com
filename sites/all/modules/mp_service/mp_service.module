@@ -289,13 +289,15 @@ $notice = "\n----新年快乐----
 【i b】无限飞行号
 【r t】今夜心未眠
 【em】听听90后
-【y r】Yi-radio爱广播".$notice ;
+【y r】Yi-radio爱广播
+<a href='http://stream.liangyou.net/channel/65837e3587'>同行频道（串流广播）</a>".$notice ;
         $menu['32'] = '
         ----训练节目----
 【bv】灵命日粮
 【ee】拥抱每一天
 【b f】幸福满家园
-【ws】长夜的牵引'.$notice ;
+【ws】长夜的牵引
+<a href="http://stream.liangyou.net/channel/65837e3587">同行频道（串流广播）</a>'.$notice ;
         // foreach ($programs as $key2 => $value2) {
         //   $menu["$key"] .= "\n【".$key2."】". $value2;
         // }
@@ -878,6 +880,7 @@ $notice = "\n----新年快乐----
           $title = "$title".date('ymd');
           $y = data('y')-1;
           $str = $y.date('md');
+          watchdog('$str', $str, array(), WATCHDOG_NOTICE, 'link');
           $musicurl = 'http://audio1.liangyou.net/files/media/ly_daily/2013Daily_'.$str.'.mp3';
           $desc = "love_yongbuzhixi公众号，每日更新";
           $hgmusicurl = $musicurl;
