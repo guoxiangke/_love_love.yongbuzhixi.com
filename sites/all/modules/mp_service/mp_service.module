@@ -306,12 +306,19 @@ $notice = "\n----新年快乐----
           return;
         }
       }
-      if(in_array($keyword, array_keys($radios_list))) { // || in_array($keyword, $value2)
+      // bv-1;
+      if(in_array($keyword, array_keys($radios_list)) || in_array(substr($keyword, 0,2), array_keys($radios_list)) ) { // || in_array($keyword, $value2)
+        $offset = 0;
+        if(strlen($keyword)>2) ｛
+          $offset = substr($keyword, 2,1);
+        ｝
+
+
         if($radios_list[$keyword]['day'] == 0) {//1-7
           $title = $radios_list[$keyword]['name'];//'英语世界';
-          $week_day = date('N', time());
+          // $week_day = date('N', time());
           $title = "【".$keyword."】".$title;
-          $string = date('ymd',time());
+          $string = date('ymd',time()-$offset*24*60*60);
           // $musicurl = // http://liangyou2.nissigz.com:15200/gv/gv131218.mp3
           $musicurl = $radios_list[$keyword]['prefix'].$keyword."/".$keyword.$string.'.mp3';
           $desc = "love_yongbuzhixi公众号，每日更新".date("n月d日-周").$week_day;
@@ -322,7 +329,7 @@ $notice = "\n----新年快乐----
         if($radios_list[$keyword]['day'] == 5) {//1-5
           $desc = '1-5';
           $title = $radios_list[$keyword]['name'];//'英语世界';
-          $week_day = date('N', time());
+          $week_day = date('N', time()-$offset*24*60*60);
           $title = "【".$keyword."】".$title;
           $string = date('ymd',time());
           $num = $radios_list[$keyword]['day'];
@@ -340,7 +347,7 @@ $notice = "\n----新年快乐----
         if($radios_list[$keyword]['day'] == 6) {//6 7
           $desc = '6,7';
           $title = $radios_list[$keyword]['name'];//'英语世界';
-          $week_day = date('N', time());
+          $week_day = date('N', time()-$offset*24*60*60);
           $title = "【".$keyword."】".$title;
           $string = date('ymd',time());
           if($week_day/2) {
@@ -360,7 +367,7 @@ $notice = "\n----新年快乐----
         }
         if($radios_list[$keyword]['day'] == 1 || $radios_list[$keyword]['day'] == 2) {
           $title = $radios_list[$keyword]['name'];//'英语世界';
-          $num = $radios_list[$keyword]['day'];
+          $week_day = date('N', time()-$offset*24*60*60);
           $title = "【".$keyword."】".$title;
           $week_day = date('N', time());
           $tus = date('d')+($num - $week_day);
