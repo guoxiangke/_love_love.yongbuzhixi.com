@@ -312,6 +312,7 @@ $notice = "\n----新年快乐----
         if(strlen($keyword)>2){
           $offset = substr($keyword, 2,1);
           $keyword = substr($keyword, 0,2);
+          watchdog('offset', $offset, array(), WATCHDOG_NOTICE, 'link');
         }
         if($radios_list[$keyword]['day'] == 0) {//1-7
           $title = $radios_list[$keyword]['name'];//'英语世界';
