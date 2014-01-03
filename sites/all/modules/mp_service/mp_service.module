@@ -310,7 +310,7 @@ $notice = "\n----新年快乐----
       if(in_array($keyword, array_keys($radios_list)) || in_array(substr($keyword, 0,2), array_keys($radios_list)) ) { // || in_array($keyword, $value2)
         $offset = 0;
         if(strlen($keyword)>2){
-          $offset = substr($keyword, 2,1);
+          $offset = substr($keyword, 3,1);
           $keyword = substr($keyword, 0,2);
           watchdog('offset', $offset, array(), WATCHDOG_NOTICE, 'link');
         }
@@ -370,6 +370,7 @@ $notice = "\n----新年快乐----
           $week_day = date('N', time()-$offset*24*60*60);
           $title = "【".$keyword."】".$title;
           $week_day = date('N', time());
+          $num = $radios_list[$keyword]['day'];
           $tus = date('d')+($num - $week_day);
           $string = date('ym',time()).$tus;
           // $musicurl = // http://liangyou2.nissigz.com:15200/gv/gv131218.mp3
