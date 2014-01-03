@@ -374,7 +374,7 @@ $notice = "\n----新年快乐----
           $string = date('ym',time()).$tus;
           // $musicurl = // http://liangyou2.nissigz.com:15200/gv/gv131218.mp3
           $musicurl = $radios_list[$keyword]['prefix'].$keyword."/".$keyword.$string.'.mp3';
-          $desc = "love_yongbuzhixi 公众号，每日更新".date("n月d日-周$num播出");
+          $desc = "love_yongbuzhixi 公众号，每日更新".date("n月d日-周$num 播出");
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           return;
