@@ -310,9 +310,9 @@ $notice = "\n----新年快乐----
         watchdog($keyword,substr($keyword, 0,2), array(), WATCHDOG_NOTICE, 'link');
       if(in_array($keyword, array_keys($radios_list)) || in_array(substr($keyword, 0,2), array_keys($radios_list)) ) { // || in_array($keyword, $value2)
         $offset = 0;
-        if(strlen($keyword)>2) ｛
+        if(strlen($keyword)>2){
           $offset = substr($keyword, 2,1);
-        ｝
+        }
         watchdog('keyword', $keyword, array(), WATCHDOG_NOTICE, 'link');
         if($radios_list[$keyword]['day'] == 0) {//1-7
           $title = $radios_list[$keyword]['name'];//'英语世界';
