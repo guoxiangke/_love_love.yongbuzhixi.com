@@ -457,9 +457,9 @@ $notice = "\n----新年快乐----
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
         case 'm':
-          $title = '每日箴言';
+          $title = '每日箴言-'.date('md');
           $musicurl = 'http://www.chinesetodays.org/Portals/11/'.date('M').'Devos/'.date('j').'14.mp3';
-          $desc = "云上的爱";
+          $desc = 'love_yongbuzhixi公众号';;
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
