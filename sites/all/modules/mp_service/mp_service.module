@@ -456,6 +456,13 @@ $notice = "\n----新年快乐----
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
+        case 'm':
+          $title = '每日箴言';
+          $musicurl = 'http://www.chinesetodays.org/Portals/11/'.date('M').'Devos/'.date('j').'14.mp3';
+          $desc = "云上的爱";
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
         case '77':
           $title = 'FM 77.7-love_yongbuzhixi';
           $musicurl = 'http://fm77.u.qiniudn.com/77/xiangniannideshengdanjie.mp3';
