@@ -113,7 +113,7 @@ function mp_service_response() {
                 );
 $notice = "\n----新年快乐----
 永不止息，需要有你!
-2014【gv】全新的你
+2014 全新的你
 全新的你，全新的广播
 回复【31】【32】\n回复【201314+新年愿望】去微信大屏幕看看吧！\n";//回复【11+您的祝福与感恩或建议内容】
 
@@ -270,7 +270,6 @@ $notice = "\n----新年快乐----
       
       foreach ($radio_list_simple as $key => $programs) {
         $menu['31'] = "
-        ----福音节目----
 【i r】i-radio爱广播
 【eg】英语世界
 【g t】恩典与真理
@@ -292,7 +291,6 @@ $notice = "\n----新年快乐----
 【y r】Yi-radio爱广播
 <a href='http://stream.liangyou.net/channel/65837e3587'>同行频道（串流广播）</a>".$notice ;
         $menu['32'] = '
-        ----训练节目----
 【bv】灵命日粮
 【ee】拥抱每一天
 【b f】幸福满家园
