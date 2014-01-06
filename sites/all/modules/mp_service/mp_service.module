@@ -223,7 +223,7 @@ $notice = "\n----新年快乐----
           // 栽培节目-适合基督徒
           'bv' => array('name' =>'灵命日粮', 'prefix'=>$prefix['32'],'day'=>0),//0
           'ee' => array('name' =>'拥抱每一天', 'prefix'=>$prefix['32'],'day'=>0),//0
-          'bf' => array('name' =>'幸福满家园', 'prefix'=>$prefix['32'],'day'=>0),//0
+          'bf' => array('name' =>'幸福满家园', 'prefix'=>$prefix['32'],'day'=>6),//0
           'ws' => array('name' =>'长夜的牵引', 'prefix'=>$prefix['32'],'day'=>0),//0
 
           // 'bv' => '生命的四季',
@@ -358,7 +358,7 @@ $notice = "\n----新年快乐----
             $string = date('ym',time()).$tus;
           }
           $musicurl = $radios_list[$keyword]['prefix'].$keyword."/".$keyword.$string.'.mp3';
-          $desc = "love_yongbuzhixi 公众号，每日更新".date("n月d日-周一到周五播出");
+          $desc = "love_yongbuzhixi 公众号，每日更新".date("n月d日-周6周日播出");
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           return;
