@@ -69,7 +69,7 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['value']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['value']['precision'] = '0';
   $handler->display->display_options['fields']['value']['appearance'] = 'rate_views_widget';
-  /* Field: Content: Answer */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -182,7 +182,7 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Answer */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -203,7 +203,6 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['picture']['label'] = '';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'sc120';
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -296,7 +295,7 @@ function druedu_qa_features_views_default_views() {
   );
   $handler->display->display_options['relationships']['votingapi_vote']['current_user'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Answer */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -310,8 +309,6 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
   $handler->display->display_options['fields']['picture']['label'] = '';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'sc120';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -327,7 +324,7 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'sbq_date_medium_revert';
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
   $handler->display->display_options['fields']['created']['custom_date_format'] = '1';
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
@@ -489,14 +486,6 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['field_computed_answers']['label'] = '';
   $handler->display->display_options['fields']['field_computed_answers']['alter']['text'] = '<span>[field_computed_answers-value]</span><span>Answers</span>';
   $handler->display->display_options['fields']['field_computed_answers']['element_label_colon'] = FALSE;
-  /* Field: Content statistics: Total views */
-  $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
-  $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
-  $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
-  $handler->display->display_options['fields']['totalcount']['label'] = '';
-  $handler->display->display_options['fields']['totalcount']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['totalcount']['alter']['text'] = '<span>浏览数</span><span>[totalcount]</span>';
-  $handler->display->display_options['fields']['totalcount']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -505,7 +494,7 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Answer */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -535,16 +524,6 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
   $handler->display->display_options['fields']['picture']['label'] = '';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'profile_small';
-  /* Field: Node: Published at */
-  $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
-  $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
-  $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
-  $handler->display->display_options['fields']['published_at']['label'] = '';
-  $handler->display->display_options['fields']['published_at']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['published_at']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['published_at']['date_format'] = 'sbq_date_medium_revert';
-  $handler->display->display_options['fields']['published_at']['custom_date_format'] = '1';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -566,6 +545,20 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['field_ask_anonymous']['label'] = '';
   $handler->display->display_options['fields']['field_ask_anonymous']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ask_anonymous']['type'] = 'list_key';
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = '';
+  $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['changed']['date_format'] = 'short';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -615,14 +608,6 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['field_computed_answers']['label'] = '';
   $handler->display->display_options['fields']['field_computed_answers']['alter']['text'] = '<span>[field_computed_answers-value]</span><span>Answers</span>';
   $handler->display->display_options['fields']['field_computed_answers']['element_label_colon'] = FALSE;
-  /* Field: Content statistics: Total views */
-  $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
-  $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
-  $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
-  $handler->display->display_options['fields']['totalcount']['label'] = '';
-  $handler->display->display_options['fields']['totalcount']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['totalcount']['alter']['text'] = '<span>浏览数</span><span>[totalcount]</span>';
-  $handler->display->display_options['fields']['totalcount']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -631,7 +616,7 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Answer */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -661,16 +646,6 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
   $handler->display->display_options['fields']['picture']['label'] = '';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'profile_small';
-  /* Field: Node: Published at */
-  $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
-  $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
-  $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
-  $handler->display->display_options['fields']['published_at']['label'] = '';
-  $handler->display->display_options['fields']['published_at']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['published_at']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['published_at']['date_format'] = 'sbq_date_medium_revert';
-  $handler->display->display_options['fields']['published_at']['custom_date_format'] = '1';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -697,6 +672,20 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['field_mark_question_resolved']['table'] = 'field_data_field_mark_question_resolved';
   $handler->display->display_options['fields']['field_mark_question_resolved']['field'] = 'field_mark_question_resolved';
   $handler->display->display_options['fields']['field_mark_question_resolved']['type'] = 'list_key';
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = '';
+  $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['changed']['date_format'] = 'short';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Global: Null */
   $handler->display->display_options['arguments']['null']['id'] = 'null';
@@ -715,6 +704,7 @@ function druedu_qa_features_views_default_views() {
 }';
   $handler->display->display_options['arguments']['null']['validate']['fail'] = 'empty';
   $handler->display->display_options['path'] = 'questions/all';
+  $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = '问答';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -731,10 +721,7 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['title'] = '未解决';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'role';
-  $handler->display->display_options['access']['role'] = array(
-    4 => '4',
-  );
+  $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -817,14 +804,6 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['field_computed_answers']['label'] = '';
   $handler->display->display_options['fields']['field_computed_answers']['alter']['text'] = '<span>[field_computed_answers-value]</span><span>Answers</span>';
   $handler->display->display_options['fields']['field_computed_answers']['element_label_colon'] = FALSE;
-  /* Field: Content statistics: Total views */
-  $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
-  $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
-  $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
-  $handler->display->display_options['fields']['totalcount']['label'] = '';
-  $handler->display->display_options['fields']['totalcount']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['totalcount']['alter']['text'] = '<span>[totalcount]</span><span>Views</span>';
-  $handler->display->display_options['fields']['totalcount']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -833,7 +812,7 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Answer */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -865,14 +844,6 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
   $handler->display->display_options['fields']['picture']['image_style'] = 'sc120';
-  /* Field: Node: Published at */
-  $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
-  $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
-  $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
-  $handler->display->display_options['fields']['published_at']['label'] = '';
-  $handler->display->display_options['fields']['published_at']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['published_at']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['published_at']['date_format'] = 'q_a_date';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -907,6 +878,13 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'privatemsg_current_day';
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = '';
+  $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['changed']['date_format'] = 'short';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1025,42 +1003,45 @@ function druedu_qa_features_views_default_views() {
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = '我的问答';
   $handler->display->display_options['menu']['weight'] = '2';
-  $handler->display->display_options['menu']['name'] = 'menu-question-menu';
+  $handler->display->display_options['menu']['name'] = 'devel';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_1');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: COUNT(Votes: Value) */
-  $handler->display->display_options['fields']['value']['id'] = 'value';
-  $handler->display->display_options['fields']['value']['table'] = 'votingapi_vote';
-  $handler->display->display_options['fields']['value']['field'] = 'value';
-  $handler->display->display_options['fields']['value']['relationship'] = 'votingapi_vote';
-  $handler->display->display_options['fields']['value']['group_type'] = 'count';
-  $handler->display->display_options['fields']['value']['label'] = '';
-  $handler->display->display_options['fields']['value']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['value']['alter']['text'] = '<span class="number">[value]</span><span class="vote">投票</span>';
-  $handler->display->display_options['fields']['value']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['value']['element_label_class'] = 'vote-question';
-  $handler->display->display_options['fields']['value']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['value']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['value']['precision'] = '0';
-  /* Field: Content: computed_answers */
-  $handler->display->display_options['fields']['field_computed_answers']['id'] = 'field_computed_answers';
-  $handler->display->display_options['fields']['field_computed_answers']['table'] = 'field_data_field_computed_answers';
-  $handler->display->display_options['fields']['field_computed_answers']['field'] = 'field_computed_answers';
-  $handler->display->display_options['fields']['field_computed_answers']['label'] = '';
-  $handler->display->display_options['fields']['field_computed_answers']['alter']['text'] = '<span>[field_computed_answers-value]</span><span>Answers</span>';
-  $handler->display->display_options['fields']['field_computed_answers']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Display: Question List Default */
+  $handler = $view->new_display('page', 'Question List Default', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '问答';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Global: Null */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['null']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['null']['validate']['type'] = 'php';
+  $handler->display->display_options['arguments']['null']['validate_options']['code'] = 'if (empty($argument)) {
+  return TRUE;
+} else {
+  return FALSE;
+}';
+  $handler->display->display_options['arguments']['null']['validate']['fail'] = 'empty';
+  $handler->display->display_options['path'] = 'questions';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = '问答';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['type'] = 'normal';
+  $handler->display->display_options['tab_options']['title'] = '问题中心';
+  $handler->display->display_options['tab_options']['weight'] = '0';
+  $handler->display->display_options['tab_options']['name'] = 'main-menu';
   $export['questions'] = $view;
 
   $view = new view();

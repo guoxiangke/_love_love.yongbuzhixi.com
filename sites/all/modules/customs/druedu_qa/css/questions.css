@@ -439,9 +439,7 @@
 	line-height: 10px;
 	font-size:11px;
 }
-.view-question .links span.delete a {
-border-right:1px solid #909090;
-}
+
 #questions .q-taglink a {
 	font-family: arial;
 	font-size:11px;
@@ -557,7 +555,6 @@ border-right:1px solid #909090;
 .answer-node-form {
 	margin:10px 0 0 0;
 	border-top:3px solid #3A87AD;
-	color:#fff;
 }
 .answer-node-form .control-label {
 	background: #3A87AD;

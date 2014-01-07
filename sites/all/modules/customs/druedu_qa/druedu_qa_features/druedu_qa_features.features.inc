@@ -57,38 +57,6 @@ function druedu_qa_features_flag_default_flags() {
 }
 
 /**
- * Implements hook_image_default_styles().
- */
-function druedu_qa_features_image_default_styles() {
-  $styles = array();
-
-  // Exported image style: profile_small.
-  $styles['profile_small'] = array(
-    'name' => 'profile_small',
-    'effects' => array(
-      14 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 30,
-          'height' => 30,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'profile_small',
-  );
-
-  return $styles;
-}
-
-/**
  * Implements hook_node_info().
  */
 function druedu_qa_features_node_info() {

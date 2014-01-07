@@ -24,23 +24,24 @@
  * @ingroup views_templates
  */
  /*
-Crystal:
+Dale:
 $field->content should not contain any markup.
 If the variable contains markup, edit the View, go to "FORMAT", "Show:" and click "Settings", and uncheck "Provide default field wrapper elements" to remove all the generated markup for this View.
+
+// dpm($fields);
+	value (Object) stdClass
+	field_computed_answers (Object) stdClass
+	title (Object) stdClass
+	body (Object) stdClass
+	field_tags (Object) stdClass
+	picture (Object) stdClass
+	name (Object) stdClass
+	field_ask_anonymous (Object) stdClass
+	field_mark_question_resolved (Object) stdClass
+	created (Object) stdClass
+  changed (Object) stdClass
 */
 ?>
-
-<?php /**foreach ($fields as $id => $field): ?>
-  <?php if (!empty($field->separator)): ?>
-    <?php print $field->separator; ?>
-  <?php endif; ?>
-
-  <?php print $field->wrapper_prefix; ?>
-    <?php print $field->label_html; ?>
-    <?php print $field->content; ?>
-  <?php print $field->wrapper_suffix; ?>
-<?php endforeach; */?>
-
 <?php foreach ($fields as $id => $field): ?>
   <?php if (!empty($field->separator)): ?>
     <?php $$id = $field->separator; ?>
@@ -80,7 +81,7 @@ If the variable contains markup, edit the View, go to "FORMAT", "Show:" and clic
 		<div class="q-author pull-left">
 			<?php print $picture; ?>
 			<div class="commit pull-left">
-				<div class="timestamp"><span><?php print $q_author; ?></span><span><?php print $published_at; ?></span></div>
+				<div class="timestamp"><span><?php print $q_author; ?></span><span><?php print $created; ?></span></div>
 		<!-- 		<div class="username"></div> -->
 			</div>
 		</div>
@@ -89,10 +90,10 @@ If the variable contains markup, edit the View, go to "FORMAT", "Show:" and clic
 		    <span class="tags-label"><?php echo t('Tags');?>:</span>
 			<?php print $field_tags; ?>
 		</div>
-		<div class="links">
+		<!-- <div class="links">
 			<span class="edit"><?php //print $edit_node; ?></span>
 			<span class="delete"><?php //print $delete_node; ?></span>
-		</div>
+		</div> -->
 		</div>
 	</div>
 </div>

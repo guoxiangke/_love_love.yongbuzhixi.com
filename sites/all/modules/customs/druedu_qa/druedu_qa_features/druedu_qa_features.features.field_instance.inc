@@ -335,10 +335,9 @@ function druedu_qa_features_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'computed_field',
         'settings' => array(),
-        'type' => 'computed_field_plain',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'notifications' => array(
         'label' => 'above',
@@ -376,12 +375,8 @@ function druedu_qa_features_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -431,10 +426,9 @@ function druedu_qa_features_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'notifications' => array(
         'label' => 'above',

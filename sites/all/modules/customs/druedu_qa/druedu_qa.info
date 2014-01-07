@@ -11,4 +11,3 @@ dependencies[] = views_ui
 dependencies[] = auto_nodetitle
 dependencies[] = token
 ;dependencies[] = statistics
-dependencies[] = publication_date
