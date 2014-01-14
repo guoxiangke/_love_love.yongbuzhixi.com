@@ -890,6 +890,13 @@ $notice = "\n
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
+        case 'wizbee':
+          $title = 'wizbee试听';
+          $desc = '外教一对一 Tandy';
+          $musicurl = 'http://fm77.u.qiniudn.com/egTandy_01-13-14_joan.mp3';
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
 
         case '523':
         case '５２３':
