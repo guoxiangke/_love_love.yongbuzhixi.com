@@ -151,11 +151,10 @@ $notice = "\n
           'bf' => '幸福满家园',
           'ws' => '长夜的牵引',
           'be' => '真道分解',
-
+          'tr' => '彩虹桥',
           // 'bv' => '生命的四季',
           // 
           // 'bv' => '空中辅导',
-          // 'bv' => '彩虹桥',
           // 'bv' => '齐来颂扬',
           // 'bv' => '无愧的工人',
           // 'bv' => '有问必答',
@@ -225,14 +224,15 @@ $notice = "\n
           // 栽培节目-适合基督徒
           'bv' => array('name' =>'灵命日粮', 'prefix'=>$prefix['32'],'day'=>0),//0
           'ee' => array('name' =>'拥抱每一天', 'prefix'=>$prefix['32'],'day'=>0),//0
-          'bf' => array('name' =>'幸福满家园', 'prefix'=>$prefix['32'],'day'=>6),//0
+          'bf' => array('name' =>'幸福满家园', 'prefix'=>$prefix['32'],'day'=>6),//6 7
           'ws' => array('name' =>'长夜的牵引', 'prefix'=>$prefix['32'],'day'=>0),//0
           'be' => array('name' =>'真道分解', 'prefix'=>$prefix['32'],'day'=>0),//0
+          'tr' => array('name' =>'彩虹桥', 'prefix'=>$prefix['32'],'day'=>0),//0
 
           // 'bv' => '生命的四季',
           // 'bv' => '',
           // 'bv' => '空中辅导',
-          // 'bv' => '彩虹桥',
+          // 
           // 'bv' => '齐来颂扬',
           // 'bv' => '无愧的工人',
           // 'bv' => '有问必答',
@@ -294,7 +294,8 @@ $notice = "\n
         $menu['32'] = '【bv】灵命日粮
 【ee】拥抱每一天
 【b f】幸福满家园
-【ws】长夜的牵引'.$notice ;
+【ws】长夜的牵引
+【tr】彩虹桥*New*'.$notice ;
         // foreach ($programs as $key2 => $value2) {
         //   $menu["$key"] .= "\n【".$key2."】". $value2;
         // }
