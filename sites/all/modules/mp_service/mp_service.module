@@ -467,8 +467,8 @@ $notice = "\n
           break;
         case '77':
           $title = 'FM 77.7-love_yongbuzhixi';
-          $musicurl = 'http://fm77.u.qiniudn.com/77/xiangniannideshengdanjie.mp3';
-          $desc = "想你的圣诞节";
+          $musicurl = 'http://fm77.u.qiniudn.com/77/wodeaiybb.mp3';
+          $desc = "我的爱不改变";
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
@@ -894,11 +894,12 @@ $notice = "\n
         case '523':
         case '５２３':
           $title = '在天父怀中';
-          $title = "$title".date('ymd');
-          $y = data('y')-1;
-          $str = $y.date('md');
+          $title = "$title".date('md');
+          // $y = data('y')-1;
+          $str = date('md');
           watchdog('$str', $str, array(), WATCHDOG_NOTICE, 'link');
-          $musicurl = 'http://audio1.liangyou.net/files/media/ly_daily/2013Daily_'.$str.'.mp3';
+          //http://audio1.liangyou.net/files/media/ly_daily/2013Daily_130114.mp3
+          $musicurl = 'http://audio1.liangyou.net/files/media/ly_daily/2013Daily_13'.$str.'.mp3';
           $desc = "love_yongbuzhixi公众号，每日更新";
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
