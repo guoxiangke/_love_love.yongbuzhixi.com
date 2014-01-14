@@ -97,7 +97,6 @@ function druedu_qa_uninstall() {
   $rate_widgets = variable_get(RATE_VAR_WIDGETS,NULL);
   $druedu_qa_rates = array(
     1 => 'qa_vote_up_down',
-    2 => 'qa_is_useful',
   );
   if($rate_widgets) {
     foreach ($rate_widgets as $key => $rate) {
