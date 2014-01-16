@@ -386,6 +386,14 @@ $notice = "\n
       }
 
       switch ($keyword) {
+        case '000':     
+          $contentStr = $notice."\n<a href='http://wx.dev.camplus.hk/focus.html'>一键关注</a>";
+            mp_service_update_user_info($wechatObj);
+          break; 
+        case '001':     
+          $contentStr = $notice."\n<a href='weixin://contacts/profile/duoenjiawizbee'>一点关注微信</a>";
+            mp_service_update_user_info($wechatObj);
+          break; 
         case '00':     
           $contentStr = $notice;//."\n此期间,可访问指令为\n【52】今日广播\n【523】在天父怀中";//广播指令为纯数字，请勿带*号。号和中括号\n【1】玩法介绍\n【2】发布相片/心情\n【3】查看活跃用户\n【4】每日灵修广播\n
             mp_service_update_user_info($wechatObj);
