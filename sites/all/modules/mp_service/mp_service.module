@@ -387,10 +387,10 @@ $notice = "\n
 
       switch ($keyword) {
         case '0':     
-          $contentStr = "【365】恩典365*new*
+          $contentStr = "【365】恩典365*new*\n【000】wizbee外教试听
 ----新年快乐----
 永不止息，需要有你!
-回复【31】【32】\n回复【201314+新年愿望】去微信大屏幕看看吧！\n快速小永推荐的微信<a href='weixin://contacts/profile/duoenjiawizbee'>关注wizbee</a>";
+回复【31】【32】\n回复【201314+新年愿望】去微信大屏幕看看吧！\n推荐:<a href='weixin://contacts/profile/duoenjiawizbee'>wizbee</a>\n和小永一起学英语";
             mp_service_update_user_info($wechatObj);
           break; 
         case '00':     
@@ -907,7 +907,7 @@ $notice = "\n
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
-        case 'wizbee':
+        case '000':
           $title = 'wizbee试听';
           $desc = '外教一对一 Tandy';
           $musicurl = 'http://fm77.u.qiniudn.com/egTandy_01-13-14_joan.mp3';
