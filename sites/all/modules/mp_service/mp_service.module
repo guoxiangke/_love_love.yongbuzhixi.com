@@ -388,7 +388,7 @@ $notice = "\n
       switch ($keyword) {
         case '0':     
           $contentStr = "【365】恩典365*new*\n
-【31】【32】微信听广播\n<a href='weixin://contacts/profile/duoenjiawizbee'>----永不止息----</a>\n<a href='weixin://contacts/profile/duoenjiawizbee'>wizbee和小永一起学英语</a>\n<a href='weixin://contacts/profile/duoenjiawizbee'>----需要有你----</a>\n【080】wizbee外教试听\n时不时回复【0】获取小永最近分享的优秀公众号[微笑]\n----新年快乐----";
+【31】【32】微信听广播\n<a href='weixin://contacts/profile/duoenjiawizbee'>-----永不止息-----</a>\n<a href='weixin://contacts/profile/duoenjiawizbee'>wizbee和小永一起学英语</a>\n<a href='weixin://contacts/profile/duoenjiawizbee'>-----需要有你-----</a>\n【080】wizbee外教试听\n时不时回复【0】获取小永最近分享的优秀公众号[微笑]\n-----新年快乐-----";
             mp_service_update_user_info($wechatObj);
           break; 
         case '080':
