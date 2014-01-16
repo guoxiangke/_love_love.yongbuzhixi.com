@@ -389,10 +389,17 @@ $notice = "\n
         case '0':     
           $contentStr = "【365】恩典365*new*\n【000】wizbee外教试听\n
 【31】【32】广播
-----新年蒙恩----
+----新年快乐----
 永不止息，需要有你!\n推荐:<a href='weixin://contacts/profile/duoenjiawizbee'>wizbee</a>和小永一起学英语";
             mp_service_update_user_info($wechatObj);
           break; 
+        case '000':
+          $title = 'wizbee试听';
+          $desc = '外教一对一 Tandy';
+          $musicurl = 'http://fm77.u.qiniudn.com/egTandy_01-13-14_joan.mp3';
+          $hgmusicurl = $musicurl;
+          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
+          break;
         case '00':     
           $contentStr = $notice;//."\n此期间,可访问指令为\n【52】今日广播\n【523】在天父怀中";//广播指令为纯数字，请勿带*号。号和中括号\n【1】玩法介绍\n【2】发布相片/心情\n【3】查看活跃用户\n【4】每日灵修广播\n
             mp_service_update_user_info($wechatObj);
@@ -904,13 +911,6 @@ $notice = "\n
           $title = "$title-".date('ymd');
           $musicurl = $prefix_uri."$radio_list[$keyword]/$radio_list[$keyword]".date('ymd').'.mp3';
           $desc = "love_yongbuzhixi公众号，每日更新";
-          $hgmusicurl = $musicurl;
-          $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
-          break;
-        case '000':
-          $title = 'wizbee试听';
-          $desc = '外教一对一 Tandy';
-          $musicurl = 'http://fm77.u.qiniudn.com/egTandy_01-13-14_joan.mp3';
           $hgmusicurl = $musicurl;
           $wechatObj->music($title, $desc, $musicurl, $hgmusicurl)->reply();
           break;
