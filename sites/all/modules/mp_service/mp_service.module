@@ -390,7 +390,7 @@ $notice = "\n
           $contentStr = "【365】恩典365*new*\n【080】wizbee外教试听\n
 【31】【32】广播
 ----新年快乐----
-永不止息，需要有你!\n推荐:<a href='weixin://contacts/profile/duoenjiawizbee'>wizbee</a>和小永一起学英语";
+永不止息，需要有你!\n推荐:<a href='weixin://contacts/profile/duoenjiawizbee'>wizbee</a>和小永一起学英语\n时不时回复【0】获取小永最近分享的优秀公众号[微笑]";
             mp_service_update_user_info($wechatObj);
           break; 
         case '080':
